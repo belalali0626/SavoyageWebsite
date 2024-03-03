@@ -1,10 +1,9 @@
-import styled from 'styled-components'
-import {Link as LinkR} from 'react-router-dom'
-import {Link as LinkS} from 'react-scroll'
+import styled from 'styled-components';
+import { Link as LinkR } from 'react-router-dom';
+import { Link as LinkS } from 'react-scroll';
 
 export const Nav = styled.nav`
-    //background: #000;
-    background: ${({scrollNav}) => (scrollNav ? '#000' : 'transparent')};
+    background: ${({ scrollNav }) => (scrollNav ? '#000' : 'transparent')};
     height: 80px;
     margin-top: -80px;
     display: flex;
@@ -19,7 +18,8 @@ export const Nav = styled.nav`
     @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
     }
-`
+`;
+
 export const NavbarContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -28,10 +28,9 @@ export const NavbarContainer = styled.div`
     width: 100%;
     padding: 0 24px;
     max-width: 1100px;
+`;
 
-`
 export const NavLogo = styled(LinkR)`
-    //color: #B05FFD;
     color: #fff;
     justify-self: flex-start;
     cursor: pointer;
@@ -41,31 +40,26 @@ export const NavLogo = styled(LinkR)`
     margin-left: 24px;
     font-weight: bold;
     text-decoration: none;
-    transition: all ease 0.2s;
+    transition: color 0.2s ease-in-out;
 
     &:hover {
-        color: #B05FFD;
+        color: #dcdcdc; /* Light gray for a slightly darker hover effect */
     }
+`;
 
-`
 
 export const MobileIcon = styled.div`
     display: none;
 
     @media screen and (max-width: 768px) {
         display: block;
-        //position: absolute;
-        //top: 0;
-        //right: 0;
         margin-top: auto;
         margin-bottom: auto;
-        //transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
         color: #fff;
     }
-
-`
+`;
 
 export const NavMenu = styled.ul`
     display: flex;
@@ -78,12 +72,11 @@ export const NavMenu = styled.ul`
     @media screen and (max-width: 768px) {
         display: none;
     }
-
-`
+`;
 
 export const NavItem = styled.li`
     height: 80px;
-`
+`;
 
 export const NavLinks = styled(LinkS)`
     color: #fff;
@@ -93,44 +86,44 @@ export const NavLinks = styled(LinkS)`
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 
     &.active {
         border-bottom: 3px solid #B05FFD;
     }
 
     &:hover {
-        color: #B05FFD;
+        color: #dcdcdc; /* Light gray for a slightly darker hover effect */
     }
+`;
 
-`
+
 export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
+
     @media screen and (max-width: 768px) {
         display: none;
     }
-
-`
+`;
 
 export const NavBtnLink = styled(LinkR)`
     border-radius: 50px;
-    text-decoration: none;
-    background: #B05FFD;
+    background: #ADD8E6; /* Light blue background to match the button theme */
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #010606; /* Darker text color for better consistency and visibility */
     font-size: 1rem;
     outline: none;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     font-weight: 900;
+    text-decoration: none;
 
     &:hover {
-        transition: all 0.2s ease-in-out;
-        background: #fff;
-        color: #B05FFD;
+        background: #F5F5F5; /* Slightly off-white for hover background */
+        color: #ADD8E6; /* Light blue text color for hover, matching the button background */
     }
+`;
 
-`
