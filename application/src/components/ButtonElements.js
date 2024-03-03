@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import {Link as LinkS} from 'react-scroll'
-import {Link as LinkR} from 'react-router-dom'
+import styled from "styled-components";
+import {Link as LinkS} from 'react-scroll';
+import {Link as LinkR} from 'react-router-dom';
 
 export const Button = styled(LinkS)`
     border-radius: 50px;
@@ -20,8 +20,8 @@ export const Button = styled(LinkS)`
     font-weight: 600;
 
     &:hover {
-        background: ${({ primary }) => (primary ? '#F5F5F5' : '#ADD8E6')}; /* Invert or adjust as needed for hover */
-        color: ${({ dark }) => (dark ? '#010606' : '#010606')}; /* Adjust text color for hover */
+        background: ${({ primary }) => (primary ? '#F5F5F5' : '#ADD8E6')}; /* Invert for hover */
+        color: ${({ dark }) => (dark ? '#010606' : '#010606')};
     }
 `;
 
@@ -48,13 +48,14 @@ export const ButtonR = styled(LinkR)`
         color: ${({ dark }) => (dark ? '#010606' : '#010606')};
     }
 `;
+
 export const ButtonBasic = styled(LinkS)`
     border-radius: 50px;
-    background: ${({primary}) => (primary ? '#B05FFD' : '#010606')};
+    background: ${({ primary }) => (primary ? '#ADD8E6' : '#010606')}; /* Updated to light blue */
     white-space: nowrap;
-    padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
-    color: ${({dark}) => (dark ? '#010606' : '#fff')};
-    font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
+    padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
+    color: ${({ dark }) => (dark ? '#010606' : '#F5F5F5')}; /* Slightly off-white for text */
+    font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
     outline: none;
     border: none;
     cursor: pointer;
@@ -67,19 +68,18 @@ export const ButtonBasic = styled(LinkS)`
     font-weight: 600;
 
     &:hover {
-        background: ${({primary}) => (primary ? '#fff' : '#B05FFD')};
-        color: ${({dark}) => (dark ? '#010606' : '#fff')};
+        background: ${({ primary }) => (primary ? '#F5F5F5' : '#ADD8E6')}; /* Invert for hover */
+        color: ${({ dark }) => (dark ? '#010606' : '#010606')};
     }
-
-`
+`;
 
 export const ButtonBasicInv = styled(LinkS)`
     border-radius: 50px;
-    background: ${({primary}) => (primary ? '#B05FFD' : '#010606')};
+    background: ${({ primary }) => (primary ? '#010606' : '#ADD8E6')}; /* Updated for consistency */
     white-space: nowrap;
-    padding: ${({big}) => (big ? '14px 48px' : '12px 30px')};
-    color: ${({dark}) => (dark ? '#010606' : '#fff')};
-    font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
+    padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
+    color: ${({ dark }) => (dark ? '#F5F5F5' : '#010606')}; /* Adjusted color for contrast */
+    font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
     outline: none;
     border: none;
     cursor: pointer;
@@ -92,8 +92,7 @@ export const ButtonBasicInv = styled(LinkS)`
     font-weight: 600;
 
     &:hover {
-        background: #000;
-        color: #fff;
+        background: #F5F5F5; /* Slightly off-white for hover */
+        color: #010606; /* Dark text color for hover */
     }
-
-`
+`;

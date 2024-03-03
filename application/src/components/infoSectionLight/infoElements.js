@@ -23,7 +23,7 @@ export const Title = styled.h1 `
 `
 
 export const Subtitle = styled.h5 `
-    color: #B05FFD;
+    color: #4682B4;
     font-weight: 500;
     text-transform: uppercase;
 
