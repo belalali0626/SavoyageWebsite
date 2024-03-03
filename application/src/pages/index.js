@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import HeroSection from "../components/heroSection";
 import InfoSection from "../components/infoSection";
 import { Navbar } from "./../components/navbar";
@@ -12,7 +12,6 @@ import Footer from "../components/footer";
 
 export const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => {
     setIsOpen(!isOpen);
   };
