@@ -7,6 +7,8 @@ import {
   ArrowRight,
 } from "./HeroElements";
 import { ButtonR } from "../ButtonElements";
+import { ButtonAHref } from "../ButtonElements";
+
 import "../../App.css";
 
 // Function to dynamically load scripts
@@ -69,18 +71,20 @@ const HeroSection = () => {
     <HeroContainer ref={heroRef}>
       {/* VideoBg component is removed/commented out to use the Vanta.js effect */}
       <HeroContent>
-        <h1 className="h1-hero">Reaching Goals Made Easy</h1>
+        <h1 className="h1-hero">Chart Your Course to Wholesale Success</h1>
         <p className="hero-text">
-          Sign up today and receive $250 in credit for your next successful project.
+          Embark on your voyage with SAVoyage Distributions and discover a sea of premium wholesale products. Sign up now to navigate the best deals for your business.
         </p>
         <HeroBtnWrapper>
-          <ButtonR to="/signin" onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark="true">
-            Get started {hover ? <ArrowForward /> : <ArrowRight />}
-          </ButtonR>
-        </HeroBtnWrapper>
+    <ButtonAHref href="/contactus" onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark="true">
+        Set Sail {hover ? <ArrowForward /> : <ArrowRight />}
+    </ButtonAHref>
+</HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>
   );
+  
+  
 };
 
 export default HeroSection;

@@ -24,30 +24,31 @@ export const Home = () => {
       <HeroSection />
       <InfoSection
         image={Image1}
-        id="about"
-        subtitle="Mauris tempor interdum"
-        title="Proin condimentum diam"
-        text="In luctus nibh nec metus placerat consectetur. Maecenas odio mi, ullamcorper at porta non, egestas vitae velit. Donec lacinia porta tristique. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec arcu nec diam posuere tincidunt. Nulla dignissim enim id nibh luctus, ullamcorper sagittis eros semper."
-        btnText="Start today"
+        id="global-sourcing"
+        subtitle="Embarking on Global Sourcing"
+        title="Navigate the Seas of Commerce"
+        text="Dive into the vast ocean of global sourcing with SAVoyage Distributions. Our expertise in navigating the complex waters of international trade ensures your business has access to the most coveted products worldwide. Join us on a voyage where success is not just a destination, but a journey."
+        btnText="Discover More"
       />
       <InfoSectionLight
         image={Image2}
-        id="discover"
-        subtitle="Morbi iaculis enim"
-        title="In hac habitasse"
-        text="Phasellus porta sagittis sapien. Nam quis odio eu libero tempus rutrum. Suspendisse nec eros eget ex cursus rhoncus. Proin at velit quis ante pretium porta. Quisque pulvinar, elit et tincidunt ultricies, mauris odio luctus risus, vitae auctor elit risus a tortor. Nunc pulvinar purus id est rutrum vulputate. Mauris venenatis lectus vel nisi semper scelerisque."
-        btnText="Explore"
+        id="customer-support"
+        subtitle="Steadfast Customer Support"
+        title="Guiding You Every Step of the Way"
+        text="At SAVoyage, your journey is paramount. With dedicated support that mirrors the guiding light of a lighthouse, we ensure your voyage through the market's ebbs and flows is smooth and steadfast. Our team is your crew, ready to assist at a moment's notice."
+        btnText="Learn More"
       />
       <Services />
       <InfoSectionLight
-        image={Image1}
-        id="#"
-        subtitle="Duis et lectus accumsan"
-        title="Quisque dui justo"
-        text="Cras et ligula eget neque ornare tempor et vitae est. Duis et lectus accumsan, mollis dui a, finibus metus. Quisque dui justo, ullamcorper eget luctus id, consectetur eget nunc. In quis arcu erat. Morbi consequat imperdiet lorem, porta porta erat hendrerit vel. Aliquam dignissim purus at dolor posuere euismod."
-        btnText="Read more"
+        image={Image1} // Assume Image1 is also relevant here; adjust as needed.
+        id="strategic-partnerships"
+        subtitle="Forge Lasting Alliances"
+        title="Partnerships That Weather Any Storm"
+        text="In the vast expanse of the wholesale market, the alliances we forge are our most treasured assets. SAVoyage Distributions prides itself on building enduring relationships with suppliers and clients alike, ensuring a mutual journey towards prosperity and beyond."
+        btnText="View Partnerships"
       />
       <Footer />
     </>
   );
+  
 };

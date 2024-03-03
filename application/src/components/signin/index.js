@@ -1,49 +1,40 @@
 import React, { useState } from "react";
-import {
-  SigninContainer,
-  SigninWrapper,
-  SigninP,
-  SigninInput,
-} from "./SigninElements"; // Ensure this path matches your actual file structure
-import { Button } from "../ButtonElements"; // Ensure this path matches your actual file structure
+import { SigninContainer, SigninWrapper, SigninP, SigninInput } from "./SigninElements"; 
+import { Button } from "../ButtonElements";
+import { Modal } from 'react-bootstrap';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionMessage, setSubmissionMessage] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      alert("Please fill in all fields.");
-      return;
-    }
-
-    setIsSubmitting(true);
-    // Simulate form submission delay
-    setTimeout(() => {
-      setSubmissionMessage("Sent successfully!");
-      // Clear form fields
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-      // Automatically clear the submission message after 3 seconds
-      setTimeout(() => {
-        setSubmissionMessage('');
-      }, 3000);
-    }, Math.random() * (5000 - 1000) + 1000);
+    setSubmitting(true);
+    // Simulating form submission with a timer
+    await new Promise((resolve) => setTimeout(resolve, Math.floor(Math.random() * 5000) + 1000));
+    setSubmitting(false);
+    setShowModal(true);
+    // Clear form data after submission
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: ""
+    });
   };
 
   return (
@@ -53,52 +44,32 @@ const ContactUs = () => {
           <h3 className="center-align mb-5">Contact Us</h3>
           <form onSubmit={handleSubmit}>
             <SigninP>Name</SigninP>
-            <SigninInput 
-              type="text" 
-              name="name" 
-              placeholder="Enter your name..." 
-              value={formData.name} 
-              onChange={handleChange} 
-              disabled={isSubmitting} 
-            />
+            <SigninInput type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your name..." required />
             
             <SigninP>Email</SigninP>
-            <SigninInput 
-              type="email" 
-              name="email" 
-              placeholder="Enter your email..." 
-              value={formData.email} 
-              onChange={handleChange} 
-              disabled={isSubmitting} 
-            />
+            <SigninInput type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter your email..." required />
             
             <SigninP>Subject</SigninP>
-            <SigninInput 
-              type="text" 
-              name="subject" 
-              placeholder="Subject of your message..." 
-              value={formData.subject} 
-              onChange={handleChange} 
-              disabled={isSubmitting} 
-            />
+            <SigninInput type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Subject of your message..." required />
             
             <SigninP>Message</SigninP>
-            <SigninInput 
-              as="textarea" 
-              name="message" 
-              placeholder="Type your message here..." 
-              value={formData.message} 
-              onChange={handleChange} 
-              disabled={isSubmitting} 
-            />
+            <SigninInput as="textarea" name="message" value={formData.message} onChange={handleChange} placeholder="Type your message here..." required />
             
-            <Button type="submit" className="mt-5 mb-3" disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting...' : 'Send Message'}
+            <Button type="submit" className="mt-5 mb-3" disabled={submitting}>
+              {submitting ? 'Submitting...' : 'Send Message'}
             </Button>
           </form>
-          {submissionMessage && <p className="center-align mt-3">{submissionMessage}</p>}
         </div>
       </SigninWrapper>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Message Sent Successfully</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your message has been sent successfully.</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>Close</Button>
+        </Modal.Footer>
+      </Modal>
     </SigninContainer>
   );
 };

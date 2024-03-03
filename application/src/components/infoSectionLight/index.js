@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 import { InfoContainer, InfoWrapper, Subtitle, Title } from "./infoElements";
 import { ButtonBasicInv } from "../ButtonElements";
+import { ButtonBasicInvAnchor } from "../ButtonElements";
 
 export const InfoSectionLight = ({
   id,
@@ -24,9 +25,9 @@ export const InfoSectionLight = ({
               <Subtitle>{subtitle}</Subtitle>
               <Title className="text-black mb-5">{title}</Title>
               <p className="text-black mb-4">{text}</p>
-              <ButtonBasicInv to="" primary="false" dark="true" className="mx-auto">
-                {btnText}
-              </ButtonBasicInv>
+              <ButtonBasicInvAnchor href="#" primary="false" dark="true" className="mx-auto">
+                  {btnText}
+              </ButtonBasicInvAnchor>
             </div>
           </div>
         </InfoWrapper>
